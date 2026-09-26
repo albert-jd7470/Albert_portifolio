@@ -1,0 +1,204 @@
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 100px 5%;
+  background-color: #fafaf9; /* matching contact section background */
+  color: #1a1a1a;
+}
+
+.about-header {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border: 1px solid #f7bd25;
+  color: #d49c15;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.about-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #f7bd25;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Left Column */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-text-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-text-content strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.about-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.info-card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.info-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.info-card-desc {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.btn-resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: #f7bd25;
+  color: #1a1a1a;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  width: fit-content;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 15px rgba(247, 189, 37, 0.2);
+}
+
+.btn-resume-download:hover {
+  transform: translateY(-2px);
+  background-color: #e5af22;
+}
+
+/* Right Column */
+.about-right {
+  display: flex;
+  justify-content: center;
+}
+
+.developer-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.developer-image-wrapper {
+  background-color: #121212; /* Dark background */
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-illustration {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.developer-card-footer {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.developer-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.developer-role {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f7bd25;
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-right {
+    order: -1; /* Put image on top for mobile */
+  }
+  .about-title {
+    font-size: 2.5rem;
+  }
+}

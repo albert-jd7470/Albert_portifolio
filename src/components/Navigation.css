@@ -1,0 +1,81 @@
+.main-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  border-radius: 50px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 800px;
+}
+
+.nav-brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-brand .logo-bracket {
+  color: #f7bd25;
+}
+
+.nav-brand .text-primary {
+  color: var(--text-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-resume-btn {
+  background-color: var(--text-primary);
+  color: var(--bg-color);
+  padding: 6px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.nav-resume-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* simple mobile fallback, or could make a hamburger */
+  }
+}

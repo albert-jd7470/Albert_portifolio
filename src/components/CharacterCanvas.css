@@ -1,0 +1,16 @@
+.character-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--bg-color); /* Match image BG exactly */
+}
+
+.character-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

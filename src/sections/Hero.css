@@ -1,0 +1,174 @@
+.hero-section {
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* Prevent horizontal scroll from canvas */
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  width: 100%;
+  height: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+  pointer-events: none;
+}
+
+.hero-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.hero-text-wrapper {
+  max-width: 480px;
+  width: 100%;
+  pointer-events: auto;
+  /* Optional glassmorphism, kept subtle */
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -2px;
+}
+
+.block {
+  display: block;
+}
+
+.hero-roles {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.dot {
+  color: var(--text-light);
+}
+
+.hero-description {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.scroll-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.scroll-line {
+  width: 2px;
+  height: 40px;
+  background-color: var(--text-primary);
+  opacity: 0.3;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--text-primary);
+  animation: scrollDown 2s infinite ease-in-out;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+@media (max-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-content {
+    justify-content: center;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding-top: 100px; /* Space for nav */
+  }
+  
+  .hero-content {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+  
+  .hero-text-wrapper {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-roles {
+    font-size: 0.85rem;
+  }
+  
+  .scroll-indicator {
+    display: none; /* Hide on mobile to save space */
+  }
+}
