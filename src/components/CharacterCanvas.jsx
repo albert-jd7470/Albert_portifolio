@@ -99,6 +99,11 @@ export default function CharacterCanvas() {
 
     const render = () => {
       if (!state.current.isFullyLoaded || !ctx || !canvas) {
+        if (ctx && canvas) {
+          // Fill canvas with yellow during load to prevent any black flickering
+          ctx.fillStyle = '#f7bd25';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
         animationFrameId = requestAnimationFrame(render);
         return;
       }
