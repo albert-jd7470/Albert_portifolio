@@ -35,6 +35,11 @@ const skills = [
     name: 'Git & DevOps',
     percent: '78%',
     description: 'Version control, CI/CD pipelines, and collaborative development workflows.'
+  },
+  {
+    name: 'React.js',
+    percent: '70%',
+    description: 'Building interactive web interfaces with modern React, Hooks, and Vite.'
   }
 ];
 
