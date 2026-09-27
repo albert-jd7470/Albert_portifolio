@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './CharacterCanvas.css';
 
 const TOTAL_FRAMES = 64;
@@ -11,6 +11,9 @@ const DEADZONE_RADIUS_PCT = 0.12;
 export default function CharacterCanvas() {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
+  
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Keep rapidly changing values in refs to prevent React re-renders
   const state = useRef({
@@ -33,8 +36,10 @@ export default function CharacterCanvas() {
 
       const checkLoaded = () => {
         loadedCount++;
+        setLoadingProgress(Math.round((loadedCount / totalToLoad) * 100));
         if (loadedCount === totalToLoad) {
           state.current.isFullyLoaded = true;
+          setIsLoading(false);
         }
       };
 
@@ -201,6 +206,12 @@ export default function CharacterCanvas() {
 
   return (
     <div className="character-canvas-container" ref={containerRef}>
+      {isLoading && (
+        <div className="canvas-loader">
+          <div className="loader-spinner"></div>
+          <span className="loader-text">Loading {loadingProgress}%</span>
+        </div>
+      )}
       <canvas ref={canvasRef} className="character-canvas" />
     </div>
   );
